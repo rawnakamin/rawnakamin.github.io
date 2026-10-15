@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- EDIT: your name and a one-line description (shows in Google results and browser tabs) -->
+  <title>Jane Doe | Economics</title>
+  <meta name="description" content="Jane Doe, Ph.D. candidate in Economics at University Name. On the 2026–27 job market.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fcfcfd;
+      --ink: #1c2433;
+      --muted: #5b6474;
+      --rule: #dde1e7;
+      --accent: #24527a;
+      --panel: #f1f4f8;
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #14181f;
+        --ink: #e6e9ee;
+        --muted: #a0a8b6;
+        --rule: #2c333e;
+        --accent: #8db8de;
+        --panel: #1b212a;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.18em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .page {
+      max-width: 68rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 16rem 1fr;
+      gap: 4rem;
+    }
+
+    /* ---------- Sidebar ---------- */
+    .profile { position: sticky; top: 2.5rem; align-self: start; }
+    .profile img {
+      width: 100%;
+      max-width: 13rem;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      margin-bottom: 1.5rem;
+      background: var(--panel);
+    }
+    .profile h1 {
+      font-size: 1.85rem;
+      line-height: 1.15;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+    .profile .role {
+      font-family: var(--sans);
+      color: var(--muted);
+      margin: 0 0 1.25rem;
+      line-height: 1.45;
+    }
+    .profile ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 0.97rem;
+    }
+    .profile li { margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .cv-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      padding: 0.5rem 1rem;
+      border: 1.5px solid var(--accent);
+      border-radius: 4px;
+      font-family: var(--sans);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .cv-link:hover { background: var(--accent); color: var(--bg); }
+
+    /* ---------- Main column ---------- */
+    main { max-width: 42rem; }
+    .market-note {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      margin: 0 0 2.75rem;
+    }
+    .bio { margin: 0 0 3rem; }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 3rem 0 1.25rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* The job market paper is the one prominent element on the page */
+    .jmp {
+      background: var(--panel);
+      border-left: 4px solid var(--accent);
+      padding: 1.75rem 1.75rem 1.5rem;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 1rem;
+    }
+    .jmp .kind {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 0.5rem;
+    }
+    .jmp h3 {
+      font-size: 1.6rem;
+      line-height: 1.25;
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+    }
+    .jmp .abstract { margin: 0 0 1rem; }
+    .links {
+      font-family: var(--sans);
+      font-size: 0.97rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.25rem;
+      margin: 0;
+    }
+    .updated { color: var(--muted); }
+
+    .paper { margin-bottom: 1.75rem; }
+    .paper h3 {
+      font-size: 1.12rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin: 0 0 0.2rem;
+    }
+    .paper .meta {
+      font-family: var(--sans);
+      color: var(--muted);
+      font-size: 0.97rem;
+      margin: 0 0 0.35rem;
+    }
+    details summary {
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 0.97rem;
+      color: var(--accent);
+      width: fit-content;
+    }
+    details p { margin: 0.5rem 0 0; }
+
+    .plain-list { padding-left: 1.2rem; margin: 0; }
+    .plain-list li { margin-bottom: 0.5rem; }
+
+    .refs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+      gap: 1.5rem;
+    }
+    .refs p { margin: 0; line-height: 1.45; }
+    .refs .name { font-weight: 600; }
+    .refs .detail { font-family: var(--sans); font-size: 0.95rem; color: var(--muted); }
+
+    footer {
+      margin-top: 4rem;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 52rem) {
+      .page { grid-template-columns: 1fr; gap: 2rem; padding-top: 2rem; }
+      .profile { position: static; }
+      .profile img { max-width: 10rem; }
+      .jmp { padding: 1.25rem; }
+      .jmp h3 { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ================= SIDEBAR: photo, name, contact ================= -->
+    <aside class="profile">
+      <!-- EDIT: upload your photo to the files/ folder as photo.jpg (or change the filename here) -->
+      <img src="files/photo.jpg" alt="Photo of Jane Doe" onerror="this.style.display='none'">
+
+      <h1>Jane Doe</h1>
+      <p class="role">Ph.D. Candidate in Economics<br>University Name</p>
+
+      <ul>
+        <li><a href="mailto:jane.doe@university.edu">jane.doe@university.edu</a></li>
+        <li>Department of Economics<br>123 Campus Street, City</li>
+        <!-- Optional extra links: delete any you don't use -->
+        <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+        <li><a href="https://github.com/yourusername">GitHub</a></li>
+      </ul>
+
+      <!-- EDIT: upload your CV to files/CV.pdf. Keep the same filename when you update it. -->
+      <a class="cv-link" href="files/CV.pdf">Download CV</a>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+      <p class="market-note">I am on the 2026–27 academic and policy job market and will be available for interviews.</p>
+
+      <!-- EDIT: 2–4 sentences about your research -->
+      <p class="bio">I am an applied microeconomist working on labor and public economics. My research uses administrative data and quasi-experimental methods to study how social insurance programs shape worker behavior and firm hiring. My fields are Labor Economics and Public Finance.</p>
+
+      <!-- ----- Job market paper ----- -->
+      <section aria-labelledby="jmp-heading">
+        <h2 id="jmp-heading">Job market paper</h2>
+        <article class="jmp">
+          <p class="kind">Job market paper</p>
+          <!-- EDIT: title -->
+          <h3>The Title of Your Job Market Paper Goes Here</h3>
+          <!-- EDIT: abstract (keep it around 150 words) -->
+          <p class="abstract">Write your abstract here. Start with the question, then the setting and data, then the identification strategy, and finish with the main result and why it matters. Committees often read only this paragraph, so make the headline finding concrete, with a number if you can.</p>
+          <p class="links">
+            <!-- EDIT: upload the paper to files/JMP.pdf and update the date when you replace it -->
+            <a href="files/JMP.pdf">Paper (PDF)</a>
+            <a href="files/JMP_appendix.pdf">Online appendix</a>
+            <span class="updated">Latest version: October 2026</span>
+          </p>
+        </article>
+      </section>
+
+      <!-- ----- Working papers ----- -->
+      <section aria-labelledby="wp-heading">
+        <h2 id="wp-heading">Working papers</h2>
+
+        <!-- To add a paper: copy one whole <article class="paper"> ... </article> block and edit it -->
+        <article class="paper">
+          <h3><a href="files/paper2.pdf">Title of Your Second Paper</a></h3>
+          <p class="meta">with Coauthor Name and Coauthor Name</p>
+          <details>
+            <summary>Abstract</summary>
+            <p>Abstract text for this paper.</p>
+          </details>
+        </article>
+
+        <article class="paper">
+          <h3>Title of Your Third Paper</h3>
+          <p class="meta">Solo-authored. Revise and resubmit at <em>Journal Name</em></p>
+          <details>
+            <summary>Abstract</summary>
+            <p>Abstract text for this paper.</p>
+          </details>
+        </article>
+      </section>
+
+      <!-- ----- Work in progress ----- -->
+      <section aria-labelledby="wip-heading">
+        <h2 id="wip-heading">Work in progress</h2>
+        <ul class="plain-list">
+          <li>Title of a project in progress <span class="updated">(with Coauthor Name)</span></li>
+          <li>Title of another project in progress</li>
+        </ul>
+      </section>
+
+      <!-- ----- Teaching ----- -->
+      <section aria-labelledby="teaching-heading">
+        <h2 id="teaching-heading">Teaching</h2>
+        <ul class="plain-list">
+          <li>Instructor, Intermediate Microeconomics, Summer 2025</li>
+          <li>Teaching Assistant, Econometrics (Ph.D.), 2023–2025</li>
+          <li>Teaching Assistant, Principles of Economics, 2022–2023</li>
+        </ul>
+      </section>
+
+      <!-- ----- References: copy exactly from your CV ----- -->
+      <section aria-labelledby="refs-heading">
+        <h2 id="refs-heading">References</h2>
+        <div class="refs">
+          <div>
+            <p class="name">Professor Name (Chair)</p>
+            <p class="detail">University Name</p>
+            <p class="detail"><a href="mailto:advisor@university.edu">advisor@university.edu</a></p>
+          </div>
+          <div>
+            <p class="name">Professor Name</p>
+            <p class="detail">University Name</p>
+            <p class="detail"><a href="mailto:ref2@university.edu">ref2@university.edu</a></p>
+          </div>
+          <div>
+            <p class="name">Professor Name</p>
+            <p class="detail">University Name</p>
+            <p class="detail"><a href="mailto:ref3@university.edu">ref3@university.edu</a></p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <!-- EDIT: update this whenever you change the site -->
+        Last updated October 2026
+      </footer>
+    </main>
+
+  </div>
+</body>
+</html>
