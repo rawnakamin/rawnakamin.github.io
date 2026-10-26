@@ -117,6 +117,28 @@
     }
     .cv-link:hover { background: var(--accent); color: var(--bg); }
 
+    /* ---------- Style of Teaching ---------- */
+.teach-group { margin-bottom: 1.75rem; }
+.teach-group h3 {
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 0.6rem;
+}
+.teach-list { list-style: none; padding: 0; margin: 0; }
+.teach-list li {
+  padding: 0.3rem 0 0.3rem 1rem;
+  border-left: 2px solid var(--rule);
+  margin-bottom: 0.15rem;
+}
+.teach-meta {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.teach-meta::before { content: "\00B7\00A0"; }
+
     /* ---------- Main column ---------- */
     main { max-width: 42rem; }
     .market-note {
@@ -281,23 +303,33 @@
       </section>
 
       <!-- ----- Teaching ----- -->
-      <section aria-labelledby="teaching-heading">
-        <h2 id="teaching-heading">Teaching</h2>
-        <ul class="plain-list"> 
-          <li>Head Teaching Assistant, Introduction to Microeconomics, 2025</li>
-          <li>Teaching Assistant, Topics in Development Economics and Policy, 2025 </li>
-          <li>Teaching Assistant, Managerial Economics: Personnel Economics, 2023-2025 </li>
-          <li>Teaching Assistant, Energy and Regulation (Joint 4th Year/Master's), 2024 </li>
-          <li>Teaching Assistant, Quantitative Methods for Policy Analysis (Master's), 2023 </li>
-          <li>Teaching Assistant, Microeconomics for Policy Analysis (Master's), 2022 </li>
-          <li>Teaching Assistant, Microeconomic Theory, 2022 </li>
-          <li>Teaching Assistant, Energy and the Environment, 2022 </li>
-          <li>Teaching Assistant, Introduction to Macroeconomics, 2021-2024 </li>
-          <li>Teaching Assistant, Economic Development, 2021-2023</li>
-          <li>Teaching Assistant, Introduction to Microeconomics, 2020, 2023, 2024</li>
-          <li>Teaching Assistant, Introduction to Data Analysis and Applied Econometrics, 2020-2021</li>
-        </ul>
-      </section>
+<section aria-labelledby="teaching-heading">
+  <h2 id="teaching-heading">Teaching</h2>
+
+  <div class="teach-group">
+    <h3>Head Teaching Assistant</h3>
+    <ul class="teach-list">
+      <li>Introduction to Microeconomics <span class="teach-meta">2025</span></li>
+    </ul>
+  </div>
+
+  <div class="teach-group">
+    <h3>Teaching Assistant</h3>
+    <ul class="teach-list">
+      <li>Topics in Development Economics and Policy <span class="teach-meta">2025</span></li>
+      <li>Managerial Economics: Personnel Economics <span class="teach-meta">2023–2025</span></li>
+      <li>Energy and Regulation <span class="teach-meta">Joint 4th Year/Master's, 2024</span></li>
+      <li>Quantitative Methods for Policy Analysis <span class="teach-meta">Master's, 2023</span></li>
+      <li>Microeconomics for Policy Analysis <span class="teach-meta">Master's, 2022</span></li>
+      <li>Microeconomic Theory <span class="teach-meta">2022</span></li>
+      <li>Energy and the Environment <span class="teach-meta">2022</span></li>
+      <li>Introduction to Macroeconomics <span class="teach-meta">2021–2024</span></li>
+      <li>Economic Development <span class="teach-meta">2021–2023</span></li>
+      <li>Introduction to Microeconomics <span class="teach-meta">2020, 2023, 2024</span></li>
+      <li>Introduction to Data Analysis and Applied Econometrics <span class="teach-meta">2020–2021</span></li>
+    </ul>
+  </div>
+</section>
 
       <!-- ----- References ----- -->
       <section aria-labelledby="refs-heading">
